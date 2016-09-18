@@ -1812,3 +1812,30 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/articles" for ::1 at 2016-09-18 16:32:05 +0800
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/articles/5" for ::1 at 2016-09-18 16:32:19 +0800
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"16efreaPQJ4dNXXzzMXDigNZVSCsLh7WfD37pCLf8l809GBoJ5c80i77Cg/nzAExO1CnFEcw9FBYhHxrEdmocA==", "id"=>"5"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/articles" for ::1 at 2016-09-18 16:32:19 +0800
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.2ms)
+
+
